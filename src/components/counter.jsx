@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Counter = () => {
+  const [count, setCount] = useState(0);
+
+  const formCount = () => {
+    return count === 0 ? "Ноль" : count;
+  };
+
   return (
     <>
-      <h1>Counter</h1>
+      <span>{formCount()}</span>
       <button>Increment</button>
     </>
   );
