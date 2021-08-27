@@ -7,9 +7,15 @@ const Counter = () => {
     return count === 0 ? "Ноль" : count;
   };
 
+  const getBageclasses = () => {
+    let classes = "badge m-2 bg-";
+    classes += count === 0 ? "danger" : "primary";
+    return classes;
+  };
+
   return (
     <>
-      <span className="badge bg-primary m-2">{formCount()}</span>
+      <span className={getBageclasses()}>{formCount()}</span>
       <button className="btn btn-secondary btn-sm">Increment</button>
     </>
   );
