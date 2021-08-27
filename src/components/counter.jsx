@@ -18,6 +18,14 @@ const Counter = () => {
     setCount(count + 1);
   };
 
+  const handleDecrement = () => {
+    if (count > 0) {
+      setCount(count - 1);
+    } else {
+      console.log("тут не откуда вычитать");
+    }
+  };
+
   return (
     <>
       <span className={getBageclasses()}>{formCount()}</span>
@@ -26,6 +34,9 @@ const Counter = () => {
         className="btn btn-secondary btn-sm"
       >
         Increment
+      </button>
+      <button onClick={handleDecrement} className="btn btn-secondary btn-sm">
+        Decrement
       </button>
     </>
   );
