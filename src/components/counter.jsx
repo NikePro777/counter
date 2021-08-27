@@ -13,14 +13,18 @@ const Counter = () => {
     return classes;
   };
 
-  const handleIncrement = () => {
+  const handleIncrement = (productId) => {
+    console.log(productId);
     setCount(count + 1);
   };
 
   return (
     <>
       <span className={getBageclasses()}>{formCount()}</span>
-      <button onClick={handleIncrement} className="btn btn-secondary btn-sm">
+      <button
+        onClick={() => handleIncrement({ id: 1 })}
+        className="btn btn-secondary btn-sm"
+      >
         Increment
       </button>
     </>
