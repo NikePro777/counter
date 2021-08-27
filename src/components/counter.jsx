@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
-
+  const tags = ["tag1", "tag2", "tag3"];
   const formCount = () => {
     return count === 0 ? "Ноль" : count;
   };
@@ -15,6 +15,9 @@ const Counter = () => {
 
   return (
     <>
+      {tags.map((tag) => (
+        <li key={tag}>{tag}</li>
+      ))}
       <span className={getBageclasses()}>{formCount()}</span>
       <button className="btn btn-secondary btn-sm">Increment</button>
     </>
