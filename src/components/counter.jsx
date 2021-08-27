@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const Counter = () => {
   const [count, setCount] = useState(0);
-  const tags = ["tag1", "tag2", "tag3"];
+  const tags = [];
   const formCount = () => {
     return count === 0 ? "Ноль" : count;
   };
@@ -13,11 +13,15 @@ const Counter = () => {
     return classes;
   };
 
+  const renderTags = () => {
+    if (tags.length === 0) return "Тегов не найдено";
+    return tags.map((tag) => <li key={tag}>{tag}</li>);
+  };
+
   return (
     <>
-      {tags.map((tag) => (
-        <li key={tag}>{tag}</li>
-      ))}
+      {tags.length === 0 && "Теги не найдены"}
+      {renderTags()}
       <span className={getBageclasses()}>{formCount()}</span>
       <button className="btn btn-secondary btn-sm">Increment</button>
     </>
