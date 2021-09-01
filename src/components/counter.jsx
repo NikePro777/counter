@@ -25,7 +25,6 @@ const Counter = () => {
       console.log("тут не откуда вычитать");
     }
   };
-
   return (
     <>
       <span className={getBageclasses()}>{formCount()}</span>
