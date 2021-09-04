@@ -11,7 +11,7 @@ const Counters = () => {
   return (
     <div>
       {counters.map((counter) => (
-        <Counter key={counter.id} />
+        <Counter key={counter.id} value={counter.value} />
       ))}
     </div>
   );
