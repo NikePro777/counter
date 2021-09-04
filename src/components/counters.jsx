@@ -7,11 +7,14 @@ const Counters = () => {
     { value: 0, id: 2, name: "Ложка" },
     { value: 0, id: 3, name: "Тарелка" },
   ]);
-
+  const handleDelete = (counterID) => {
+    const newCounters = counters.filter((c) => c.id !== counterID);
+    setCounters(newCounters);
+  };
   return (
     <div>
       {counters.map((counter) => (
-        <Counter key={counter.id} value={counter.value} name={counter.name} />
+        <Counter key={counter.id} onDelete={handleDelete} {...counter} />
       ))}
     </div>
   );

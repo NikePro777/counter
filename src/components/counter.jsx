@@ -31,12 +31,21 @@ const Counter = (props) => {
       <span className={getBageclasses()}>{formValue()}</span>
       <button
         onClick={() => handleIncrement({ id: 1 })}
-        className="btn btn-secondary btn-sm"
+        className="btn btn-secondary m-2 btn-sm"
       >
         Increment
       </button>
-      <button onClick={handleDecrement} className="btn btn-secondary btn-sm">
+      <button
+        onClick={handleDecrement}
+        className="btn btn-secondary m-2 btn-sm"
+      >
         Decrement
+      </button>
+      <button
+        className="btn btn-danger btn-sm m-2"
+        onClick={() => props.onDelete(props.id)}
+      >
+        Delete
       </button>
     </>
   );
