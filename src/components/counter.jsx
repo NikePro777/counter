@@ -27,6 +27,7 @@ const Counter = (props) => {
   };
   return (
     <>
+      <h4>{props.name}</h4>
       <span className={getBageclasses()}>{formValue()}</span>
       <button
         onClick={() => handleIncrement({ id: 1 })}
