@@ -15,9 +15,21 @@ const Counters = () => {
     setCounters(newCounters);
   };
 
-  const handleDecrement = (counterID) => {};
+  const handleDecrement = (counterId) => {
+    const newCounters = [...counters];
+    const index = newCounters.findIndex((c) => c.id === counterId);
+    if (newCounters[index].value !== 0) {
+      newCounters[index].value--;
+      setCounters(newCounters); // Мой код
+    }
+  };
 
-  const handleIncrement = (counterID) => {};
+  const handleIncrement = (counterId) => {
+    const newCounters = [...counters];
+    const index = newCounters.findIndex((c) => c.id === counterId);
+    newCounters[index].value++;
+    setCounters(newCounters);
+  };
 
   const handleReset = () => {
     console.log("yes");
@@ -29,7 +41,13 @@ const Counters = () => {
         Reset
       </button>
       {counters.map((counter) => (
-        <Counter key={counter.id} onDelete={handleDelete} {...counter} />
+        <Counter
+          key={counter.id}
+          onDelete={handleDelete}
+          onIncrement={handleIncrement}
+          onDecrement={handleDecrement}
+          {...counter}
+        />
       ))}
     </div>
   );
