@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Counters from "./components/counters";
 import NavBar from "./components/navBar";
+
 function App() {
   const initialState = [
     { value: 0, id: 1, name: "Вилка" },
