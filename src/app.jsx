@@ -7,6 +7,8 @@ function App() {
     { value: 0, id: 1, name: "Вилка" },
     { value: 0, id: 2, name: "Ложка" },
     { value: 0, id: 3, name: "Тарелка" },
+    { value: 0, id: 4, name: "Стартовый набор минималиста" },
+    { value: 0, id: 5, name: "Ненужные вещи" },
   ];
 
   const [counters, setCounters] = useState(initialState);
